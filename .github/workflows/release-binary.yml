@@ -93,7 +93,7 @@ jobs:
 
       - name: Publish artifacts (${{ matrix.settings.host }})
         if: ${{ matrix.settings.host == 'windows-latest' && github.event_name != 'release' }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.settings.asset_name }}
           path: ./moq-server/warp.exe
@@ -102,7 +102,7 @@ jobs:
       
       - name: Publish artifacts (${{ matrix.settings.host }})
         if: ${{ matrix.settings.host != 'windows-latest' && github.event_name != 'release' }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.settings.asset_name }}
           path: ./moq-server/warp
